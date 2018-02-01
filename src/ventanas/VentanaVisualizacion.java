@@ -125,6 +125,9 @@ public class VentanaVisualizacion extends javax.swing.JFrame implements Runnable
     }//GEN-LAST:event_txtTiempoActionPerformed
 
     private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed
+        labelInfo.setIcon(imgCerrado);
+        Temporizador.setTiempo(0);
+
         cerrar = true;
     }//GEN-LAST:event_btnCerrarActionPerformed
 
@@ -200,7 +203,14 @@ public class VentanaVisualizacion extends javax.swing.JFrame implements Runnable
     }
 
     private void pintaTiempo() {
-        txtTiempo.setText("" + Temporizador.getTiempo());
+        // Pintamos el tiempo mientras este sea mayor que 0, ya que en caso de
+        // cerrar el parking con el boton, se puede producir un conteo negativo
+        if (Temporizador.getTiempo() > 0) {
+            txtTiempo.setText("" + Temporizador.getTiempo());
+        } else {
+            txtTiempo.setText("0");
+
+        }
     }
 
     public static boolean isCerrar() {

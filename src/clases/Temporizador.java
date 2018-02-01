@@ -36,4 +36,8 @@ public class Temporizador implements Runnable {
         return tiempo;
     }
 
+    public static void setTiempo(int tiempo) {
+        Temporizador.tiempo = tiempo;
+    }
+
 }

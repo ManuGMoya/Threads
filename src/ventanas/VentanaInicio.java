@@ -108,19 +108,14 @@ public class VentanaInicio extends javax.swing.JFrame {
     private void botonAceptarV1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAceptarV1ActionPerformed
         // TODO add your handling code here:
         if (textoPlazas.getText().isEmpty() || textoTiempo.getText().isEmpty()) {
-
             LabelInformacion.setText("DEBE INTRODUCIR AMBOS DATOS");
-
         } else {
             System.out.println(textoPlazas.getText());
             Declaraciones.setNumPlazas(Integer.parseInt(textoPlazas.getText()));
             System.out.println(textoTiempo.getText());
             Declaraciones.setTiempo(Integer.parseInt(textoTiempo.getText()));
-
             new Declaraciones();
             new VentanaVisualizacion().setVisible(true);
-            // new VentanaTemporizador().setVisible(true);
-
             this.dispose();
         }
 
